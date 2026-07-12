@@ -1,586 +1,107 @@
-# 🌍 EcoSphere Intelligence Platform
-### *An AI-Powered ESG Operating System for Intelligent Sustainability Management*
+# EcoSphere — AI-Powered ESG Intelligence Platform
 
-> **Measure. Explain. Predict. Optimize.**
->
-> EcoSphere transforms ESG from a static reporting system into a real-time intelligence platform that continuously monitors organizational sustainability, explains ESG outcomes, predicts future risks, and recommends actionable improvements.
+EcoSphere is a production-grade Enterprise SaaS dashboard designed for organizations to track, report, and optimize their Environmental, Social, and Governance (ESG) footprints. Modeled after design systems like Stripe, Linear, and Vercel, the platform provides clear carbon tracking, real-time activity streams, interactive relationship mapping, and an integrated AI Copilot to deliver actionable intelligence.
 
 ---
 
-## 📖 Overview
+## 🌟 Key Features
 
-Traditional ESG platforms focus on collecting data and generating compliance reports. While useful, they rarely answer critical business questions such as:
+### 1. **Environmental Intelligence Hub**
+* **GHG Protocol Scope Tracking:** Monitor Scope 1 (Direct), Scope 2 (Indirect Energy), and Scope 3 (Value Chain) greenhouse gas emissions.
+* **Carbon Budgeting:** Real-time visual progress monitoring of carbon limits with dynamic hazard states.
+* **Granular Disclosures:** Track top emission sources, department metrics, and historical events.
 
-- Why did emissions increase?
-- Which supplier contributes the most carbon footprint?
-- Which department is at risk of failing compliance?
-- What actions will maximize our ESG score next month?
+### 2. **Social & Engagement Center**
+* **CSR Performance:** Keep track of employee volunteer hours, CSR event attendance, and community impact.
+* **Interactive Leaderboards:** Gamified contributor tracking with badges and XP incentives.
+* **Workforce Diversity:** Visual breakdowns of gender, age distribution, and department demographics.
 
-EcoSphere addresses these challenges by combining **event-driven architecture**, an **ESG knowledge graph**, **AI-powered recommendations**, and **predictive analytics** into a unified platform.
+### 3. **Governance & Risk Center**
+* **Audit & Deadlines:** Monitor regulatory calendars, pending actions, and policy acceptance rates.
+* **Risk Heatmap:** Cross-reference operational, financial, and reputational risks against specific departments.
+* **Compliance Alerts:** Urgency-coded cards for pending frameworks like GRI, TCFD, CSRD, and SASB.
 
-Rather than being another dashboard, EcoSphere acts as an **operating system for sustainability**.
+### 4. **AI Copilot & Advanced Analytics**
+* **EcoSphere Intelligence Engine:** Ask complex regulatory queries, forecast ESG targets, and discover supply chain vulnerabilities.
+* **Visual Relationship Explorer:** Fully interactive React Flow Knowledge Graph mapping entities, departments, and audit trails.
 
 ---
 
-# 🚀 Key Innovation
+## 🛠️ Technology Stack
 
-Instead of storing ESG data as isolated records...
+### **Frontend**
+* **Framework:** React 19 + TypeScript + Vite
+* **Styling:** Tailwind CSS v4
+* **State Management:** Zustand (placeholder store structures ready for consumption)
+* **Routing:** React Router v7
+* **Charts:** Recharts (responsive line, stacked bar, horizontal bar, pie, and radar configurations)
+* **Graphing:** `@xyflow/react` (React Flow)
+* **Animations:** Framer Motion (hover lift effects)
+
+### **Backend**
+* **Framework:** FastAPI
+* **Database ORM:** SQLAlchemy
+* **Database Driver:** Psycopg2 (PostgreSQL support with local SQLite database failover)
+* **Validation:** Pydantic v2
+* **Server:** Uvicorn
+
+---
+
+## 🚀 Getting Started
+
+Ensure you have **Python 3.10+** and **Node.js 18+** installed.
+
+### 1. Backend Setup
+
+```bash
+# Navigate to backend directory
+cd backend
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Start the FastAPI server
+python -m uvicorn main:app --reload --port 8001
+```
+* **API root:** `http://127.0.0.1:8001`
+* **Swagger Documentation:** `http://127.0.0.1:8001/docs`
+
+> **Note:** The backend automatically detects if a local PostgreSQL instance is unavailable and seamlessly falls back to a pre-seeded local SQLite file (`ecosphere.db`) to guarantee a functional developer environment.
+
+### 2. Frontend Setup
+
+```bash
+# Navigate to frontend directory
+cd ../frontend
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+* **Local app url:** `http://localhost:5173` (or the port printed in the terminal output if `5173` is occupied).
+
+---
+
+## 📂 Project Architecture
 
 ```
-Purchase
-↓
-
-Carbon Record
-```
-
-EcoSphere models the organization as a connected ecosystem.
-
-```
-Purchase
-      │
-Supplier
-      │
-Transport
-      │
-Emission Factor
-      │
-Department
-      │
-Product
-```
-
-Every business action becomes an **event**, continuously updating the organization's ESG intelligence.
-
----
-
-# 🏗 Architecture
-
-```
-                    EcoSphere
-
-               ERP / User Inputs
-                       │
-                       ▼
-              Event Processing Engine
-                       │
-     ┌─────────────────┼─────────────────┐
-     ▼                 ▼                 ▼
-Carbon Engine     Social Engine     Governance Engine
-     │                 │                 │
-     └─────────────────┼─────────────────┘
-                       ▼
-              ESG Knowledge Graph
-                       │
-      ┌────────────────┼────────────────┐
-      ▼                ▼                ▼
-Explainability    Prediction      Recommendation
-     Engine          Engine            Engine
-                       │
-                       ▼
-                 AI ESG Copilot
-                       │
-                       ▼
-             Dashboard & Reporting
-```
-
----
-
-# 💡 Core Philosophy
-
-Traditional ESG platforms answer:
-
-> **"What happened?"**
-
-EcoSphere answers:
-
-- Why did it happen?
-- What will happen next?
-- What should we do?
-- What is the impact of our decisions?
-
----
-
-# ✨ Features
-
-## 🌱 Environmental Intelligence
-
-- Automatic Carbon Accounting
-- Emission Factor Management
-- Supplier Carbon Analysis
-- Carbon Budget Tracking
-- Department Emission Monitoring
-- Sustainability Goal Tracking
-- Carbon Timeline Replay
-- Carbon Hotspot Visualization
-
----
-
-## 🤝 Social Intelligence
-
-- CSR Activity Management
-- Employee Participation Tracking
-- Diversity Metrics
-- Employee ESG Profiles
-- Department Engagement Scores
-- AI-generated CSR Recommendations
-
----
-
-## ⚖ Governance Intelligence
-
-- Policy Management
-- Audit Tracking
-- Compliance Monitoring
-- Risk Detection
-- Governance Health Score
-- Compliance Prediction
-
----
-
-## 🎮 Gamification Engine
-
-- XP System
-- Dynamic Challenges
-- AI-generated Sustainability Missions
-- Achievement Badges
-- Rewards Marketplace
-- Department Leaderboards
-
----
-
-## 🤖 AI ESG Copilot
-
-Employees and managers can interact using natural language.
-
-Example queries:
-
-```
-Why did emissions increase this month?
-
-Which supplier contributes the highest carbon footprint?
-
-How can Manufacturing improve its ESG score?
-
-Predict next month's ESG score.
-
-Which department is likely to fail an audit?
-```
-
----
-
-# 🧠 ESG Knowledge Graph
-
-Unlike traditional relational dashboards, EcoSphere builds a live organizational graph.
-
-```
-Company
-│
-├── Departments
-│      │
-│      ├── Employees
-│      ├── Products
-│      ├── Suppliers
-│      └── Challenges
-│
-└── ESG Events
-        │
-        ├── Carbon
-        ├── Social
-        └── Governance
-```
-
-This enables explainable AI and root-cause analysis.
-
----
-
-# ⚡ Event-Driven Architecture
-
-Every business activity becomes an immutable event.
-
-Examples:
-
-```
-PURCHASE_CREATED
-CSR_COMPLETED
-AUDIT_FAILED
-POLICY_ACCEPTED
-CHALLENGE_COMPLETED
-BADGE_UNLOCKED
-```
-
-Instead of directly updating ESG scores, engines react to events.
-
-```
-ERP Action
-      │
-      ▼
-Event Generated
-      │
-      ▼
-Engine Processes Event
-      │
-      ▼
-Knowledge Graph Updated
-      │
-      ▼
-Dashboard Updated
-```
-
----
-
-# 🧩 Core Components
-
-## Event Processing Engine
-
-Responsible for:
-
-- Event validation
-- Event routing
-- Event persistence
-- Triggering ESG engines
-
----
-
-## Carbon Intelligence Engine
-
-Calculates emissions from:
-
-- Purchases
-- Manufacturing
-- Fleet
-- Logistics
-- Energy Consumption
-
----
-
-## Social Intelligence Engine
-
-Tracks:
-
-- CSR participation
-- Volunteer hours
-- Diversity metrics
-- Employee engagement
-
----
-
-## Governance Engine
-
-Handles:
-
-- Policies
-- Audits
-- Compliance issues
-- Risk scoring
-
----
-
-## Explainability Engine
-
-Answers:
-
-> Why did my ESG score change?
-
-Provides complete reasoning chains.
-
-Example:
-
-```
-Environmental Score ↓
-
-↓
-
-Manufacturing Department
-
-↓
-
-Steel Purchase
-
-↓
-
-Supplier XYZ
-
-↓
-
-Road Transport
-
-↓
-
-Diesel Trucks
-
-↓
-
-+18% Carbon Emissions
-```
-
----
-
-## Recommendation Engine
-
-Generates AI recommendations such as:
-
-```
-Switch supplier
-
-↓
-
-Expected Carbon Reduction
-12%
-
-Cost Increase
-4%
-
-ROI
-8 Months
-```
-
----
-
-## Prediction Engine
-
-Forecasts:
-
-- Future ESG score
-- Compliance failures
-- Carbon trends
-- Department performance
-
----
-
-# 📊 ESG Scoring
-
-Overall ESG Score is calculated using weighted metrics.
-
-```
-Environmental : 40%
-
-Social : 30%
-
-Governance : 30%
-```
-
-Weights can be customized for each organization.
-
----
-
-# 📈 Reports
-
-- Environmental Report
-- Social Report
-- Governance Report
-- ESG Summary Report
-- Department Performance
-- Carbon Analytics
-- AI Recommendation Report
-- Custom Report Builder
-
----
-
-# 🎯 Unique Features
-
-## ESG Time Machine
-
-Replay historical ESG performance using an interactive timeline.
-
----
-
-## What-If Simulator
-
-Simulate organizational decisions before implementing them.
-
-Example:
-
-```
-Replace Supplier A
-
-↓
-
-Carbon
--14%
-
-↓
-
-Cost
-+5%
-
-↓
-
-ESG Score
-+6
-```
-
----
-
-## Department ESG DNA
-
-Every department receives a sustainability profile.
-
-```
-Manufacturing
-
-🌱 Environmental : 58%
-
-🤝 Social : 19%
-
-⚖ Governance : 23%
-```
-
----
-
-## Live Sustainability Feed
-
-```
-Ananya completed Beach Cleanup
-
-+120 XP
-
--------------------------
-
-Finance completed Policy Training
-
-+35 Governance
-
--------------------------
-
-Manufacturing reduced emissions
-
--6% Carbon
-```
-
----
-
-# 🛠 Technology Stack
-
-## Frontend
-
-- React.js
-- TypeScript
-- Tailwind CSS
-- Recharts
-- React Flow
-
----
-
-## Backend
-
-- Python
-- FastAPI
-- SQLAlchemy
-
----
-
-## Database
-
-- PostgreSQL
-- Redis
-
----
-
-## AI
-
-- OpenAI API / Ollama
-- LangChain
-- Sentence Transformers
-
----
-
-## Graph Layer
-
-- Neo4j (or NetworkX for prototype)
-
----
-
-## Visualization
-
-- Plotly
-- D3.js
-- Mermaid
-
----
-
-# 📂 Project Structure
-
-```
-ecosphere/
-
-│
+EcoSphere/
 ├── backend/
-│
-│   ├── api/
-│   ├── models/
-│   ├── engines/
-│   ├── services/
-│   ├── graph/
-│   ├── ai/
-│   └── reports/
-│
-├── frontend/
-│
-│   ├── dashboard/
-│   ├── graph/
-│   ├── copilot/
-│   ├── reports/
-│   └── components/
-│
-├── docs/
-│
-├── tests/
-│
-└── README.md
+│   ├── ai/                # AI copilot reasoning models
+│   ├── api/               # API endpoints & Pydantic validation schemas
+│   ├── models/            # SQLAlchemy database declarations
+│   ├── services/          # Seed scripts and helper functions
+│   ├── config.py          # Application configuration loaders
+│   ├── database.py        # ORM engines (SQLite fallback handler)
+│   └── main.py            # FastAPI application entrypoint
+└── frontend/
+    ├── src/
+    │   ├── components/    # Reusable widgets (StatCard, AIInsight, etc.)
+    │   ├── features/      # Domain modules (social, environment, graph)
+    │   ├── layouts/       # Screen container layouts (DashboardLayout)
+    │   ├── pages/         # Core application pages (Dashboard, Analytics)
+    │   ├── routes/        # App router definitions
+    │   └── theme/         # Common spacing, color & typography tokens
 ```
-
----
-
-# 📌 Development Roadmap
-
-## Phase 1
-
-- Database Design
-- Event Engine
-- Carbon Engine
-- ESG Scoring
-
----
-
-## Phase 2
-
-- Knowledge Graph
-- Explainability Engine
-- Recommendation Engine
-
----
-
-## Phase 3
-
-- AI Copilot
-- Predictive Analytics
-- Risk Detection
-
----
-
-## Phase 4
-
-- Dashboard
-- Reports
-- Timeline Replay
-- What-If Simulator
-
----
-
-# 🎯 Vision
-
-EcoSphere is not another ESG dashboard.
-
-It is an **AI-powered ESG Intelligence Platform** that helps organizations understand, predict, and improve sustainability using explainable AI, event-driven architecture, and knowledge graphs.
-
-Instead of simply measuring ESG performance, EcoSphere enables organizations to make **smarter sustainability decisions** in real time.
-
----
-
-## License
-
-MIT License
-
----
-
-> **"Sustainability isn't about reporting the past. It's about engineering a better future."**
