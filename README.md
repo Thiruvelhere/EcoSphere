@@ -1,6 +1,6 @@
 # EcoSphere — AI-Powered ESG Intelligence Platform
 
-EcoSphere is a production-grade Enterprise SaaS dashboard designed for organizations to track, report, and optimize their Environmental, Social, and Governance (ESG) footprints. Modeled after design systems like Stripe, Linear, and Vercel, the platform provides clear carbon tracking, real-time activity streams, interactive relationship mapping, and an integrated AI Copilot to deliver actionable intelligence.
+EcoSphere is a production-grade Enterprise SaaS dashboard designed for organizations to track, report, and optimize their Environmental, Social, and Governance (ESG) footprints. Modeled after design systems like Stripe, Linear, and Vercel, the platform provides clear carbon tracking, real-time activity streams, interactive relationship mapping, and a integrated AI copilot to deliver actionable intelligence.
 
 ---
 
