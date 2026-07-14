@@ -51,3 +51,10 @@ class Purchase(BaseModel):
         "Supplier",
         back_populates="purchases",
     )
+    carbon_transaction = relationship(
+        "CarbonTransaction",
+        back_populates="purchase",
+        uselist=False,
+        cascade="all, delete-orphan",
+    )
+    
